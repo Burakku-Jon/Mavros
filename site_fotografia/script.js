@@ -46,3 +46,17 @@ form.addEventListener('submit', function(event) {
 
     form.reset(); // Limpa o formulário
 });
+
+// efeito de flash
+const botao = document.getElementById('btn-desblock');
+        const flash = document.getElementById('camadaFlash');
+
+        botao.addEventListener('click', () => {
+            // Adiciona a classe que roda a animação CSS
+            flash.classList.add('disparar-flash');
+
+            // Remove a classe após a animação terminar (0.4s) para poder clicar de novo
+            setTimeout(() => {
+                flash.classList.remove('disparar-flash');
+            }, 400); 
+        });
